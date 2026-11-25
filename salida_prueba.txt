@@ -1,0 +1,120 @@
+=================================================================
+SISTEMA INTEGRAL DE GESTIÓN - SOFTWARE FJ
+Demostración de operaciones y manejo de excepciones
+=================================================================
+
+OPERACIÓN 1: Registrar cliente válido
+RESULTADO: Cliente C001: Ana Pérez (ana@email.com)
+Fin de la operación.
+
+OPERACIÓN 2: Intentar registrar cliente con datos inválidos
+ERROR CONTROLADO: El nombre debe ser texto de al menos 3 caracteres y solo contener letras.
+Fin de la operación.
+
+OPERACIÓN 3: Registrar segundo cliente válido
+RESULTADO: Cliente C003: Carlos Gómez (carlos@email.com)
+Fin de la operación.
+
+OPERACIÓN 4: Intentar crear cliente con parámetros faltantes
+ERROR CONTROLADO: Faltan parámetros del cliente: correo, telefono.
+Fin de la operación.
+
+OPERACIÓN 5: Crear servicio de reserva de sala
+RESULTADO: Reserva de sala por hora (capacidad 12). Tarifa: $50,000
+Fin de la operación.
+
+OPERACIÓN 6: Crear servicio de alquiler de equipos
+RESULTADO: Alquiler de equipos por día (seguro 5%). Tarifa: $80,000
+Fin de la operación.
+
+OPERACIÓN 7: Crear servicio de asesoría especializada
+RESULTADO: Asesoría especializada en Desarrollo por sesión. Tarifa: $120,000
+Fin de la operación.
+
+OPERACIÓN 8: Intentar crear servicio con tarifa negativa
+ERROR CONTROLADO: La tarifa base debe ser un número positivo.
+Fin de la operación.
+
+OPERACIÓN 9: Intentar crear servicio sin código
+ERROR CONTROLADO: El identificador es obligatorio.
+Fin de la operación.
+
+OPERACIÓN 10: Crear y procesar reserva de sala con impuesto y descuento
+RESULTADO: Reserva R001 | Ana Pérez | Sala de reuniones | CONFIRMADA | Total: 107100.0 | Total calculado: $107,100.00
+Fin de la operación.
+
+OPERACIÓN 11: Crear reserva de alquiler de equipo
+RESULTADO: Reserva creada: R002
+Fin de la operación.
+
+OPERACIÓN 12: Crear reserva de asesoría
+RESULTADO: Reserva creada: R003
+Fin de la operación.
+
+OPERACIÓN 13: Intentar crear reserva sin cliente
+ERROR CONTROLADO: La reserva requiere cliente y servicio.
+Fin de la operación.
+
+OPERACIÓN 14: Intentar reservar con un cliente no registrado
+ERROR CONTROLADO: El cliente C999 no está registrado.
+Fin de la operación.
+
+OPERACIÓN 15: Intentar reservar con duración inválida
+ERROR CONTROLADO: Duración inválida para la reserva R004.
+  Causa original: El número de sesiones debe ser un entero entre 1 y 10.
+Fin de la operación.
+
+OPERACIÓN 16: Confirmar reserva de alquiler de equipo (con impuesto)
+RESULTADO: 299880.0
+Fin de la operación.
+
+OPERACIÓN 17: Cancelar reserva de asesoría
+RESULTADO: CANCELADA
+Fin de la operación.
+
+OPERACIÓN 18: Intentar procesar una reserva cancelada
+ERROR CONTROLADO: No fue posible procesar la reserva R003.
+  Causa original: Solo se pueden confirmar reservas pendientes.
+Fin de la operación.
+
+OPERACIÓN 19: Intentar cancelar dos veces la misma reserva
+ERROR CONTROLADO: La reserva ya está cancelada.
+Fin de la operación.
+
+OPERACIÓN 20: Intentar reservar un servicio no disponible
+ERROR CONTROLADO: No fue posible procesar la reserva R005.
+  Causa original: El servicio Sala VIP no está disponible.
+Fin de la operación.
+
+OPERACIÓN 21: Intentar cálculo con impuesto inválido
+ERROR CONTROLADO: El impuesto debe ser un número entre 0 y 100.
+Fin de la operación.
+
+OPERACIÓN 22: Variantes de cálculo de costo (sobrecarga)
+RESULTADO: base=100000.0 | con impuesto=119000.0 | con descuento=90000.0 | completo=107100.0
+Fin de la operación.
+
+OPERACIÓN 23: Polimorfismo: mismo método, costo distinto por servicio
+RESULTADO: SALA: 50,000 | EQ: 84,000 | ASE: 120,000
+Fin de la operación.
+
+OPERACIÓN 24: Intentar registrar cliente duplicado
+ERROR CONTROLADO: Ya existe un cliente con ese identificador.
+Fin de la operación.
+
+OPERACIÓN 25: Provocar un error inesperado (AttributeError)
+ERROR INESPERADO CONTROLADO (AttributeError): 'NoneType' object has no attribute 'nombre'
+Fin de la operación.
+
+OPERACIÓN 26: Consultar reporte de reservas
+RESULTADO: Reserva R001 | Ana Pérez | Sala de reuniones | CONFIRMADA | Total: 107100.0
+Reserva R002 | Carlos Gómez | Alquiler de portátil | CONFIRMADA | Total: 299880.0
+Reserva R003 | Ana Pérez | Asesoría de software | CANCELADA | Total: None
+Reserva R005 | Carlos Gómez | Sala VIP | PENDIENTE | Total: None
+Fin de la operación.
+
+Demostración finalizada: el sistema siguió activo ante todos los errores.
+Revise el archivo eventos.log.
+Clientes registrados: 2
+Servicios registrados: 4
+Reservas registradas: 4
